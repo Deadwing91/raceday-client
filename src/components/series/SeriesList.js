@@ -18,6 +18,10 @@ export const SeriesList = (props) => {
     }, [refresh])
 
     return (
+        <>
+        <div className="Series_header">
+        <div className="series_title">Series</div>
+        </div>
         <article className="series">
             {
                 series.map(series => {
@@ -33,5 +37,6 @@ export const SeriesList = (props) => {
             }
             
         </article>
+        </>
     )
 }
