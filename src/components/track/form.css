@@ -13,18 +13,24 @@
     text-decoration: none;
 }
 .form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
     font-size: 30px;
     font-family: 'Racing Sans One', 'Junge', serif;
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
-    margin-left: 70px;
     padding-top: 20px;
+    justify-content: center;
 }
 
 .form_input {
     display: block;
-    padding-right: 80px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
     height: calc(1.5em + .75rem + 2px);
-    font-size: 1rem;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
     color: #ffffff;

@@ -35,7 +35,7 @@ export const TrackDetails = (props) => {
     }, [trackId])
 
     const handleDelete = (trackId) => {
-        if (window.confirm("Are you sure you want to delete this post?"))
+        if (window.confirm("Are you sure you want to delete this track?"))
             deleteTrack(trackId).then(() => {
                 setRefresh()
             }).then(() => navigate("/tracks"))

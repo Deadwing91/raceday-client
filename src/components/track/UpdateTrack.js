@@ -64,11 +64,13 @@ export const UpdateTrackForm = () => {
 
     return (
         <form className="trackForm">
-            <h2 className="trackForm__title">Update Track</h2>
+            <div className="trackForm_Id">
+            <div className="trackForm__title">Update Track</div>
+            </div>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Track Name: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
+                    <input type="text" name="name" required autoFocus className="form_input"
                         value={currentTrack.name}
                         onChange={changeTrackState}
                     />
@@ -77,7 +79,7 @@ export const UpdateTrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Location: </label>
-                    <input type="text" name="location" required autoFocus className="form-control"
+                    <input type="text" name="location" required autoFocus className="form_input"
                         value={currentTrack.location}
                         onChange={changeTrackState}
                     />
@@ -86,7 +88,7 @@ export const UpdateTrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="length">Length: </label>
-                    <input type="text" name="length" required autoFocus className="form-control"
+                    <input type="text" name="length" required autoFocus className="form_input"
                         value={currentTrack.length}
                         onChange={changeTrackState}
                     />
@@ -95,7 +97,7 @@ export const UpdateTrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="turns">Turns: </label>
-                    <input type="text" name="turns" required autoFocus className="form-control"
+                    <input type="text" name="turns" required autoFocus className="form_input"
                         value={currentTrack.turns}
                         onChange={changeTrackState}
                     />
@@ -104,7 +106,7 @@ export const UpdateTrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="seating_capacity">Seating Capacity: </label>
-                    <input type="text" name="seating_capacity" required autoFocus className="form-control"
+                    <input type="text" name="seating_capacity" required autoFocus className="form_input"
                         value={currentTrack.seating_capacity}
                         onChange={changeTrackState}
                     />
@@ -112,8 +114,17 @@ export const UpdateTrackForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
+                    <label htmlFor="image">Image: </label>
+                    <input type="text" name="image" required autoFocus className="form_input"
+                        value={currentTrack.image}
+                        onChange={changeTrackState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
                     <label className="label">Track Type:</label>
-                    <select required autoFocus className="trackTypeList" value={currentTrack.tracktype.id} onChange={(evt) => {
+                    <select required autoFocus className="form_input" value={currentTrack.tracktype.id} onChange={(evt) => {
                         const copy = { ...currentTrack }
                         copy.tracktype = parseInt(evt.target.value)
                         setCurrentTrack(copy)
@@ -121,7 +132,7 @@ export const UpdateTrackForm = () => {
                     >
                         {trackTypes.map(tracktype => (<option
                             name={tracktype.label}
-                            className="form-control"
+                            className="form_input"
                             value={tracktype.id}
                             key={`tracktype--${tracktype.id}`}
                         >{tracktype.label}</option>
@@ -138,7 +149,7 @@ export const UpdateTrackForm = () => {
                             const foundSeries = currentTrack?.series?.find(trackSeries => carSeries.id === trackSeries.id)
 
                             return <div key={`tag--${carSeries.id}`}>
-                                <input type="checkbox" name={carSeries.name}
+                                <input className="input-btn" type="checkbox" name={carSeries.name}
                                     defaultChecked={foundSeries}
                                     onClick={() => seriesArr(carSeries.id)} />
                                 <label htmlFor={carSeries.name}>{carSeries?.name}</label>
@@ -148,7 +159,7 @@ export const UpdateTrackForm = () => {
                 </div>
             </fieldset>
 
-
+            <div className="create-btn">
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault()
@@ -176,7 +187,8 @@ export const UpdateTrackForm = () => {
                     updateTrack(trackId, track)
                         .then(() => navigate(`/tracks/${trackId}`))
                 }}
-                className="btn btn-primary">Update</button>
+                className="btn btn-dark btn-lg">Update</button>
+                </div>
         </form>
     )
 }
