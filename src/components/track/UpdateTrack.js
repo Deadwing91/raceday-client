@@ -135,7 +135,7 @@ export const UpdateTrackForm = () => {
                     <label htmlFor="content" className="label">Series: </label>
                     {
                         series.map(carSeries => {
-                            const foundSeries = currentTrack.series.find(trackSeries => carSeries.id === trackSeries.id)
+                            const foundSeries = currentTrack?.series?.find(trackSeries => carSeries.id === trackSeries.id)
 
                             return <div key={`tag--${carSeries.id}`}>
                                 <input type="checkbox" name={carSeries.name}

@@ -72,7 +72,7 @@ export const TrackDetails = (props) => {
                                 <div className="track__series">{trackSeries.name}</div>
                             </section>)
                             })}
-                            <img className="track__image" src={track.image}/>
+                            <img className="track__image" src={track.image}height="400px"width="390px"/>
                         
                         <button className="track__delete"
                             onClick={() => {

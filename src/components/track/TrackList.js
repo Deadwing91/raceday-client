@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 
-import { filterTracks, getTracks} from "../../managers/TrackManager"
+import { filterTracks, getTracks } from "../../managers/TrackManager"
 import { getSeries } from "../../managers/SeriesManager"
+import "./track.css"
 
 export const TrackList = (props) => {
     const [series, setSeries] = useState([])
@@ -13,9 +14,11 @@ export const TrackList = (props) => {
     const navigate = useNavigate()
 
     const getAllTracks = () => {
-        getTracks().then(data => {setFilteredTracks(data)
-            setTracks(data)} )
-        
+        getTracks().then(data => {
+            setFilteredTracks(data)
+            setTracks(data)
+        })
+
     }
     const getAllSeries = () => {
         getSeries().then(data => setSeries(data))
@@ -48,19 +51,20 @@ export const TrackList = (props) => {
     return (
         <>
             <>
+                <div>
                 <button className="Track_add"
                     onClick={() => {
                         navigate({ pathname: "/tracks/add" })
                     }}
                 >Add New Track
                 </button>
-                <div>
-                    <select className="search" onChange={(event) => { getTracksBySeries(event)
+                    <select className="search" onChange={(event) => {
+                        getTracksBySeries(event)
                     }}>
                         <option value={0} >All Series</option>
-                        {series.map(carSeries => ( 
-                                    <option key={`series--${carSeries.id}`} value={carSeries.id} name={carSeries.name}>{carSeries.name}</option>                         
-                            ))}
+                        {series.map(carSeries => (
+                            <option key={`series--${carSeries.id}`} value={carSeries.id} name={carSeries.name}>{carSeries.name}</option>
+                        ))}
                     </select>
                 </div>
             </>
@@ -70,12 +74,14 @@ export const TrackList = (props) => {
             <article className="tracks">
                 {
                     filteredTracks.map(track => {
-                        return <section key={`event--${track.id}`} className="event">
-                            <img src={track.image} />
-                            <a className="track-name" onClick={() => navigate(`/tracks/${track.id}`)}>
-                                {track.name}
-                            </a>
-                            
+                        return <section key={`event--${track.id}`} className="track_card">
+                            <img className="image_list" src={track.image} height="120px" width="150px" />
+                            <div>
+                                <a className="track_list_name" onClick={() => navigate(`/tracks/${track.id}`)}>
+                                    {track.name}
+                                </a>
+                            </div>
+
                             {/* <div className="event__game">{track.name}</div> */}
 
                             {
@@ -87,6 +93,7 @@ export const TrackList = (props) => {
                 }
 
             </article>
+            <br></br>
         </>
     )
 }

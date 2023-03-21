@@ -16,14 +16,6 @@ export const filterTracks = (series) => {
         .then(response => response.json())
 }
 
-// const filterTracks = (series) => {
-//     fetch(`http://localhost:8000/tracks?series=${series}`)
-//         .then((tracks) => {
-//             setOriginal(tracks)
-//         })
-//         .catch(() => setOriginal([]))
-// }
-
 export const createTrack = (track) => {
     return fetch("http://localhost:8000/tracks", {
         method: "POST",
