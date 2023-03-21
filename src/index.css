@@ -20,7 +20,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #ffffff;
+	text-shadow: 2px 2px rgb(0, 0, 0);
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -31,11 +32,11 @@ textarea {
 
 body {
 	background-image: url(Flag_background_copy.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-width: 100%;
-    min-height: 100%;
-    background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-width: 100%;
+	min-height: 100%;
+	background-attachment: fixed;
 }
 
 h1,

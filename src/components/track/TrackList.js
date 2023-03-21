@@ -51,13 +51,14 @@ export const TrackList = (props) => {
     return (
         <>
             <>
-                <div>
-                <button className="Track_add"
-                    onClick={() => {
-                        navigate({ pathname: "/tracks/add" })
-                    }}
-                >Add New Track
-                </button>
+                <div className="Page_Id">
+                    <button
+                        onClick={() => {
+                            navigate({ pathname: "/tracks/add" })
+                        }}
+                    >Add New Track
+                    </button>
+                    <div className="track_list_name">Tracks</div>
                     <select className="search" onChange={(event) => {
                         getTracksBySeries(event)
                     }}>
