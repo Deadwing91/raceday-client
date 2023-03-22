@@ -80,7 +80,7 @@ export const TrackList = (props) => {
                 {
                     filteredTracks.map(track => {
                         return <section key={`event--${track.id}`} className="track_card">
-                            <img className="image_list" src={track.image} height="120px" width="150px" />
+                            <img className="image_list" src={track.image} height="120px" width="150px" onClick={() => navigate(`/tracks/${track.id}`)} />
                             <div>
                                 <a className="track_list_name" onClick={() => navigate(`/tracks/${track.id}`)}>
                                     {track.name}

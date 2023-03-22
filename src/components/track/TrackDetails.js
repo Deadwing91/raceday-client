@@ -64,6 +64,7 @@ export const TrackDetails = (props) => {
                             
                         >Edit
                         </button> */}
+                        
                         <div className="track_details_header">Track Information</div>
                         <svg onClick={() => {
                                 handleDelete(track?.id)
@@ -73,8 +74,9 @@ export const TrackDetails = (props) => {
                         {/* <button className="track__delete"
                             >Delete Track</button> */}
                     </div>
-
+                    
                     <div className="track__info">{track.name}</div>
+                    
                     <div className="track__info">{track.location}</div>
                     <div className="track__info">{track.length} mi</div>
                     <div className="track__info">{track.turns} Turns</div>

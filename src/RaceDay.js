@@ -5,7 +5,8 @@ import { NavBar } from "./components/nav/NavBar"
 
 export const RaceDay = () => (
     <>
-        <NavBar />
+        
         <ApplicationViews />
+        <NavBar />
     </>
 )

@@ -34,28 +34,32 @@ export const Login = () => {
                 <div>Username or password was not valid.</div>
                 <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
+            <div className="login_header">
+                    <div className="series_title">Race Day</div>
+                    </div>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Race Day</h1>
-                    <h2>Please sign in</h2>
+
+                    
+                    <div className="track__info">Please sign in</div>
                     <fieldset>
-                        <label htmlFor="inputUsername"> Username </label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username" required autoFocus />
+                        <label htmlFor="inputUsername"></label>
+                        <input ref={username} type="username" id="username" className="form_login" placeholder="Username" required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
+                        <label htmlFor="inputPassword"></label>
+                        <input ref={password} type="password" id="password" className="form_login" placeholder="Password" required />
                     </fieldset>
                     <fieldset style={{
                         textAlign: "center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button className="btn btn-dark btn-lg" type="submit">Sign In</button>
                     </fieldset>
                 </form>
             </section>
-            <section className="link--register">
+            {/* <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
-            </section>
+            </section> */}
         </main>
     )
 }
