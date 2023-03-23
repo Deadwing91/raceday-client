@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Race Day: The motorsports app for race track information
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Primary Features:
+The goal of this app was to allow motorsport fans(users) to be able to upload info on race tracks around them on a mobile device.
+A user can view different tracks by a specific series if they're only interested in a certain one(NASCAR, INDYCAR, F1, etc).
+A user can edit those tracks if they're is something that needs updated.
+A user can delete those tracks if they are no longer active.
+A user can view all the current series.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Target Audience:
+Motorsport fans who want to be able to find race tracks near them, info on those tracks, and what race series runs them.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Purpose and problems it solves:
+To have one place for fans to get info on race tracks, instead of having to search each track individually on Google or Wikipedia.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Getting Started:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. In the terminal, create a directory
+```bash
+cd <new directory name>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Run 
+```bash
+git clone git@github.com:Deadwing91/raceday-client.git
+```
 
-### `npm run eject`
+3. Install dependencies
+```bash
+npm install
+```
+4. Run the code
+```bash
+npm start
+```
+5. This will initialize the React app in your browser, but you won't be able to log into the site or access data without running the server side of this project. To download and start the server, go to https://github.com/Deadwing/raceday-server and follow the README there.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. Once you are running the server, create a new user, log in to view the site, and test out the features!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Please make sure to update tests as appropriate.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##
 
-## Learn More
+## Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![JavaScript](https://img.shields.io/badge/javascript-FFD700.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![REACT.js](https://img.shields.io/badge/react-61DBFB.svg?style=for-the-badge&logo=react&logoColor=black)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![CSS3](https://img.shields.io/badge/%20CSS3-0078d7.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JSON](https://img.shields.io/badge/%20JSON-36454F.svg?style=for-the-badge&logo=json&logoColor=white)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- TODO: Finish writing the readme -->
