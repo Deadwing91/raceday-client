@@ -1,7 +1,7 @@
-
 .navbar__wrapper {
     display: flex;
-    margin-top: -16px;;
+    margin-top: -16px;
+    ;
     justify-content: center;
 }
 
@@ -13,13 +13,13 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(49, 49, 49);
-    justify-content: space-evenly!important;
+    justify-content: space-evenly !important;
     margin-bottom: 0;
     margin-top: 16px;
     position: fixed;
-  bottom: 0;
-  width: 100%;
-    
+    bottom: 0;
+    width: 100%;
+
 }
 
 .navbar__item {
@@ -27,7 +27,7 @@
     list-style-type: none;
     color: white;
     font-size: 23px;
-    
+
 }
 
 .navbar__link {
@@ -36,6 +36,6 @@
     color: white;
     font-family: 'Racing Sans One', 'Junge', serif;
     font-size: 23px;
-    
+
     justify-content: space-evenly;
 }

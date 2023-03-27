@@ -55,10 +55,10 @@
 }
 
 .search {
+    display: block;
     margin-top: 10px;
     height: 28px;
     max-width: 96px;
     border-radius: 30px;
     text-align: center;
 }
-

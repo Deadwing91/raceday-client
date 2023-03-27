@@ -68,7 +68,7 @@ export const TrackList = (props) => {
                     }}>
                         <option value={0} >All Series</option>
                         {series.map(carSeries => (
-                            <option key={`series--${carSeries.id}`} value={carSeries.id} name={carSeries.name}>{carSeries.name}</option>
+                            <option  key={`series--${carSeries.id}`} value={carSeries.id} name={carSeries.name}>{carSeries.name}</option>
                         ))}
                     </select>
                 </div>
