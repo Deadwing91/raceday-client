@@ -39,7 +39,7 @@ npm install
 ```bash
 npm start
 ```
-5. This will initialize the React app in your browser, but you won't be able to log into the site or access data without running the server side of this project. To download and start the server, go to https://github.com/Deadwing/raceday-server and follow the README there.
+5. This will initialize the React app in your browser, but you won't be able to log into the site or access data without running the server side of this project. To download and start the server, go to https://github.com/Deadwing91/raceday-server and follow the README there.
 
 6. Once you are running the server, create a new user, log in to view the site, and test out the features!
 
