@@ -21,6 +21,7 @@ export const ApplicationViews = () => {
                 <Route path={"tracks/:trackId"} element={<TrackDetails />} />
                 <Route path="tracks/edit/:trackId" element={<UpdateTrackForm />} />
                 <Route path="/series" element={<SeriesList />} />
+                
             </Route>
         </Routes>
     </>

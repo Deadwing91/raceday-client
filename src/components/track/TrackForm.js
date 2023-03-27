@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { getSeries } from "../../managers/SeriesManager"
 import { createTrack, getTracks, getTrack, getTrackTypes } from "../../managers/TrackManager"
+import "./form.css"
 
 
 export const TrackForm = () => {
@@ -57,30 +58,32 @@ export const TrackForm = () => {
         setCurrentTrack(copy)
     }
 
-    
 
 
-    
+
+
 
 
     // const handleCheckboxChange = (event) => {
     //     const seriesArray
     //     };
 
-        // const tagArr = (tagId) => {
-        //     let tagArray = [...newPostTag] 
-        //     tagArray.push(tagId)
-        //     setNewPostTag(tagArray)
-        // }
+    // const tagArr = (tagId) => {
+    //     let tagArray = [...newPostTag] 
+    //     tagArray.push(tagId)
+    //     setNewPostTag(tagArray)
+    // }
 
 
     return (
         <form className="trackForm">
-            <h2 className="trackForm__title">Create New Track</h2>
+            <div className="trackForm_Id">
+                <div className="trackForm__title">Create New Track</div>
+            </div>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
+                    <label htmlFor="name">Track Name: </label>
+                    <input type="text" name="name" required autoFocus className="form_input"
                         value={currentTrack.name}
                         onChange={changeTrackState}
                     />
@@ -89,7 +92,7 @@ export const TrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Location: </label>
-                    <input type="text" name="location" required autoFocus className="form-control"
+                    <input type="text" name="location" required autoFocus className="form_input"
                         value={currentTrack.location}
                         onChange={changeTrackState}
                     />
@@ -98,7 +101,7 @@ export const TrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="length">Length: </label>
-                    <input type="text" name="length" required autoFocus className="form-control"
+                    <input type="text" name="length" required autoFocus className="form_input"
                         value={currentTrack.length}
                         onChange={changeTrackState}
                     />
@@ -107,7 +110,7 @@ export const TrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="turns">No. of Turns: </label>
-                    <input type="text" name="turns" required autoFocus className="form-control"
+                    <input type="text" name="turns" required autoFocus className="form_input"
                         value={currentTrack.turns}
                         onChange={changeTrackState}
                     />
@@ -116,7 +119,7 @@ export const TrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="seating_capacity">Seating Capacity: </label>
-                    <input type="text" name="seating_capacity" required autoFocus className="form-control"
+                    <input type="text" name="seating_capacity" required autoFocus className="form_input"
                         value={currentTrack.seating_capacity}
                         onChange={changeTrackState}
                     />
@@ -125,7 +128,7 @@ export const TrackForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="image">Image: </label>
-                    <input type="text" name="image" required autoFocus className="form-control"
+                    <input type="text" name="image" required autoFocus className="form_input"
                         value={currentTrack.image}
                         onChange={changeTrackState}
                     />
@@ -136,14 +139,14 @@ export const TrackForm = () => {
                     <label className="label">Type of Track: </label>
                     <select
                         name="trackType"
-                        className="form-control"
+                        className="form_input"
                         value={currentTrack.tracktype}
                         onChange={(event) => {
                             const copy = { ...currentTrack }
                             copy.tracktype = parseInt(event.target.value)
                             setCurrentTrack(copy)
                         }}>
-                        <option value="0">Choose Track Type:</option>
+                        <option value="0">Choose Track Type</option>
                         {trackTypes.map(trackType => (
                             <option key={`trackType--${trackType.id}`} value={trackType.id} name={trackType.label}>{trackType.label}</option>
                         ))}
@@ -152,47 +155,49 @@ export const TrackForm = () => {
             </fieldset>
             {/* <h2 className="trackForm__title">Series Ran:</h2> */}
             <fieldset className="field">
-                    <label htmlFor="content" className="label">Series: </label>
-                    {
-                        series.map(ser => {
-                            // Compare current `id` and see if on object exists with that id in currentGame.categories
-                            const Series = currentTrack.series.find(trackSeries => ser.id === trackSeries.series)
+                <label htmlFor="content" className="label">Series: </label>
+                {
+                    series.map(ser => {
+                        // Compare current `id` and see if on object exists with that id in currentGame.categories
+                        const Series = currentTrack.series.find(trackSeries => ser.id === trackSeries.series)
 
-                            return <div key={`Series--${ser.id}`}>
-                                <input type="checkbox" name={ser.name}
-                                    defaultChecked={Series}
-                                    onClick={() => seriesArr(ser.id) } />
-                                <label htmlFor={ser.name}>{ser?.name}</label>
-                            </div>
-                        })
+                        return <div key={`Series--${ser.id}`}>
+                            <input className="input-btn" type="checkbox" name={ser.name}
+                                defaultChecked={Series}
+                                onClick={() => seriesArr(ser.id)} />
+                            <label htmlFor={ser.name}>{ser?.name}</label>
+                        </div>
+                    })
 
-                    }</fieldset>
+                }</fieldset>
 
             {/* TODO: create the rest of the input fields */}
+            <div className="create-btn">
+                <button type="submit"
+                    onClick={evt => {
+                        // Prevent form from being submitted
+                        evt.preventDefault()
 
-            <button type="submit"
-                onClick={evt => {
-                    // Prevent form from being submitted
-                    evt.preventDefault()
+                        //variable name matches server(django)
+                        const track = {
+                            name: currentTrack.name,
+                            location: currentTrack.location,
+                            length: currentTrack.length,
+                            turns: currentTrack.turns,
+                            seating_capacity: currentTrack.seating_capacity,
+                            image: currentTrack.image,
+                            tracktype: parseInt(currentTrack.tracktype),
+                            series: Array.from(seriesTypes)
+                        }
 
-                    //variable name matches server(django)
-                    const track = {
-                        name: currentTrack.name,
-                        location: currentTrack.location,
-                        length: currentTrack.length,
-                        turns: currentTrack.turns,
-                        seating_capacity: currentTrack.seating_capacity,
-                        image: currentTrack.image,
-                        tracktype: parseInt(currentTrack.tracktype),
-                        series: Array.from(seriesTypes)
-                    }
-
-                    // Send POST request to your API
-                    createTrack(track)
-                        .then(() => navigate("/tracks"))
-                }}
-                className="btn btn-primary">Create</button>
+                        // Send POST request to your API
+                        createTrack(track)
+                            .then(() => navigate("/tracks"))
+                    }}
+                    className="btn btn-dark btn-lg">Create</button>
+            </div>
         </form>
+        
     )
 }
 
