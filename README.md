@@ -43,7 +43,7 @@ npm start
 
 6. Once you are running the server, create a new user, log in to view the site, and test out the features!
 
-7. Race Day is a mobile app design, so make sure to toggle to a mobile device(iphone 12 Pro) in the Google Dev Tools.
+7. Race Day is a mobile app design, so make sure to toggle to a mobile device(iphone 12 Pro) in the Google Dev Tools(F12).
 
 
 Please make sure to update tests as appropriate.
