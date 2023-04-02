@@ -3,7 +3,7 @@
 
 ## Primary Features:
 The goal of this app was to allow motorsport fans(users) to be able to upload info on race tracks around them on a mobile device.
-A user can view different tracks by a specific series if they're only interested in a certain one(NASCAR, INDYCAR, F1, WoO, etc).
+A user can view different tracks by a specific series if they're only interested in a certain one(NASCAR, INDYCAR, F1, etc).
 A user can edit those tracks if they're is something that needs updated.
 A user can delete those tracks if they are no longer active.
 A user can view all the current series.
